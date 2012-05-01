@@ -1,0 +1,137 @@
+
+/**
+ * Syntax highlighting
+ */
+.syntaxhighlighter
+{
+	background-color: transparent !important;
+	overflow: visible !important;
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
+	padding: 5px 0px 5px 0;
+}
+
+div.sh-code.code
+{
+	width: auto !important;
+	position: relative !important;
+	overflow: auto !important;
+	border: 1px solid rgba( 0,0,0,0.12 );
+	background: #f2f2f2;
+	padding: 0 3px;
+	border-radius: 5px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+div.sh-code.code.folded
+{
+	overflow: hidden !important;
+	max-height: 30px;
+}
+.message .syntaxhighlighter
+{
+	background-color: #f2f2f2 !important;
+}
+.message .syntaxhighlighter .line.alt1
+{
+  background-color: #f2f2f2 !important;
+}
+.message .syntaxhighlighter .line.alt2
+{
+  background-color: #f2f2f2 !important;
+}
+
+.message .toolbar
+{
+	background: transparent;
+	border-radius: 30px;
+	display: inline-block;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	line-height: 0;
+	z-index: 100;
+	width: auto;
+}
+
+
+.icon.icon-size-small.popup
+{
+	background-image: url(../gfx/popup-16.png);
+	background-position: 0 0;
+	margin: 4px;
+}
+
+.icon.icon-size-small.popup:hover
+{
+	background-position: 0 -16px;
+	margin: 4px;
+}
+
+.icon.icon-size-small.expand
+{
+	background-image: url(../gfx/expand-16.png);
+	background-position: 0 0;
+	margin: 4px 0px 4px 4px;
+}
+
+.icon.icon-size-small.copy
+{
+	background-image: url(../gfx/copy-16.png);
+	background-position: 0 0;
+	margin: 4px 0px 4px 4px;
+}
+
+.icon.icon-size-small.expand:hover, .icon.icon-size-small.collapse:hover
+{
+	background-position: 0 -16px;
+	margin: 4px 0px 4px 4px;
+}
+
+.icon.icon-size-small.collapse
+{
+	background-image: url(../gfx/expand-16.png);
+	background-position: 0 0;
+	-webkit-transform: rotate(180deg);
+	margin: 4px 0px 4px 4px;
+}
+
+
+.icon.icon-size-small.previous
+{
+	background-image: url(../gfx/modal_controls.png);
+	-webkit-transform: rotate(180deg);
+	margin-top: 7px;
+	margin-right: 0px;
+	background-position: 0 0;
+}
+
+.icon.icon-size-small.previous:hover
+{
+	background-position: 0 -16px;
+}
+
+.icon.icon-size-small.next
+{
+	background-image: url(../gfx/modal_controls.png);
+	margin-right: 20px;
+	background-position: 0 0;
+}
+
+.icon.icon-size-small.next:hover
+{
+	background-position: 0px -16px;
+}
+
+.icon.icon-size-small.next:after
+{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 1px;
+	height: 12px;
+	margin-top: 2px;
+	background: rgba( 0,0,0,0.2);
+	margin-left: 25px;
+}

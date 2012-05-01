@@ -1,0 +1,55 @@
+
+/**
+ * Put the CSS related to the plugin here
+ * The gfx folder of your plugin should contain the graphics if you need some
+ * and the hierarchy is kept so you can use url(../gfx/some-graphic.png)
+ */
+
+.bbcode-b
+{
+	font-weight: bold;
+}
+.bbcode-i
+{
+	font-style: italic;
+}
+.bbcode-u
+{
+	text-decoration: underline;
+}
+.bbcode-url
+{
+
+}
+.bbcode-color
+{
+
+}
+.bbcode-font
+{
+
+}
+.bbcode-left
+{
+	text-align: left;
+}
+.bbcode-right
+{
+	text-align: right;
+}
+.bbcode-center
+{
+	text-align: center;
+}
+.bbcode-justify
+{
+	text-align: justify;
+}
+.bbcode-sub
+{
+	
+}
+.bbcode-sup
+{
+
+}

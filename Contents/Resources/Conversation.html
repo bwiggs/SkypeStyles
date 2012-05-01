@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SkypeStyles.com&copy; Chat Style</title>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+	<script>
+		var debug = false;
+		var _loggedMessages = [];
+		console._log = console.log;
+		console.log = function(message)
+		{
+			_loggedMessages.push(message);
+			console._log.apply(console, arguments);
+		};
+	</script>
+	<script src="skst/js/prototype/prototype.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="skst/js/SkStLoader.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		var _fakeId = 0;
+		document.observe('skst:ready', function()
+		{
+			var e = $('debug-panel');
+			/**@DEBUG-SCRIPT@**/
+			if ( e.visible() )
+			{
+				e = $('debug-input');
+				$('container').setStyle({marginBottom: $('debug-panel').getHeight() + 'px'});
+				e.observe('keydown', function(event)
+				{
+					if ( event.keyCode == Event.KEY_RETURN )
+					{
+						event.stop();
+						var d = new Date(), time = d.toLocaleTimeString(), id = 'fake-' + (++_fakeId), text = e.getValue();
+						text = text.escapeHTML().replace(/(mailto\:|(news|(ht|f)tp(s?))\:\/\/)(([^\s]+)|([^\s]+)(#[^#]+)?)/g, function(all)
+						{
+							var v = all.escapeHTML().replace(/"/g, '&quot;');
+							return '<a href="' + v + '" title="' + v + '">' + all.escapeHTML() + '</a>';
+						});
+						SCS.conv.appendItem("<div class=\"item message in editable \" id=\"" + id + "\">\n\t<div class=\"container\">\n\t\t<div class=\"head\">\n\t\t\t<span class=\"sender\" sender=\"fakeUser\" nick=\"Fake User\"><img src=\"skcg:avatar?identity=fakeUser\" class=\"avatar\" />Fake User</span>\n\t\t\t<span class=\"time\">" + time + "</span>\n\t\t\t<button class=\"actions\" title=\"Actions\"></button>\n\t\t</div>\n\t\t<div class=\"body\">" + text + "</div>\n\t</div>\n</div>",true);
+						e.setValue('');
+					}
+				});
+			}
+			return;
+		});
+	</script>
+</head>
+<body class="parser-busy">
+	<span class="busy-flag"></span>
+	<div id="container">
+		<div id="conversation">
+			<div class="item typing invisible" id="typing">
+				<div class="container">
+					<div class="head">
+						<span class="sender"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="debug-panel" style="display: none;">
+		<input type="text" id="debug-input"/>
+	</div>
+</body>
+</html>

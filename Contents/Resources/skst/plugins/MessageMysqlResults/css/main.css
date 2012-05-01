@@ -1,0 +1,52 @@
+
+/**
+ * MySql result table
+ */
+div.mysql-results
+{
+	width: auto !important;
+	position: relative !important;
+	overflow: auto !important;
+	font-size: 1em !important;
+	padding-bottom: 1px;
+	border: 1px solid #bbbbbb;
+	-webkit-box-shadow: 3px 2px 0px rgba(0,0,0,0.05);
+}
+
+div.mysql-results table
+{
+	border-spacing: 0px;
+	background-color: #fffeff;
+}
+
+div.mysql-results table td
+{
+	background-color: rgba(255,204,125,0.35);
+	border: 2px solid white;
+	padding: 2px;
+	white-space: nowrap;
+	font-size: 0.8em;
+	color: black !important;
+}
+
+div.mysql-results table tbody tr:nth-child(even) td
+{
+	background-color: rgba(255,204,125,0.15);
+}
+
+div.mysql-results table thead td
+{
+	-webkit-box-shadow: 3px 2px 0px rgba(0,0,0,0.05);
+	background-color: rgba(155,188,248,0.93);
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+div.mysql-results-sep
+{
+	text-align: center;
+	opacity: 0.5;
+	margin-top: -2px;
+}
+

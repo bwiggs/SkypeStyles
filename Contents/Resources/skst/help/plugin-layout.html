@@ -1,0 +1,20 @@
+<h2>Plugin details:</h2>
+<dl>
+	<dt>Name</dt>
+	<dd>#{$pluginDetails.name}</dd>
+
+	<dt>Author</dt>
+	<dd><a href="mailto:#{@pluginDetails.author.email}">#{$pluginDetails.author.name}</a></dd>
+
+	<dt>Since</dt>
+	<dd>#{$pluginDetails.since}</dd>
+
+	<dt>Description</dt>
+	<dd>#{$pluginDetails.description}</dd>
+</dl>
+<div class="full-help">
+	#{pluginDetails.help}
+</div>
+<div>
+	#{pluginDetails.creditsList}
+</div>

@@ -1,0 +1,73 @@
+
+.button
+{
+	margin: 2px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.icon-size-small
+{
+	width:	16px;
+	height:	16px;
+}
+
+.pointer
+{
+	cursor: pointer;
+}
+.no-pointer
+{
+	cursor: default;
+}
+
+.icon
+{
+	background-position: center;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+
+.icon.link
+{
+	background-image: url(../gfx/link-16.png);
+}
+
+
+.icon.credits
+{
+	background-image: url(../gfx/credits-16.png);
+	margin-right: 10px;
+	margin-top: 8px;
+}
+
+.icon.bug
+{
+	background-image: url(../gfx/bug-16.png);
+	margin-right: 10px;
+	margin-top: 8px;
+}
+
+
+
+.center
+{
+	text-align: center;
+}
+
+
+.disabled
+{
+	cursor: no-drop !important;
+}
+
+.icon.disabled
+{
+	opacity: 0.5;
+}
+
+.strong
+{
+	font-weight: bold;
+}

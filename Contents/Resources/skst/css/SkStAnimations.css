@@ -1,0 +1,10 @@
+
+/**
+ * all animations
+ */
+.skst-animate-base
+{
+	-webkit-transition-name: all;
+	-moz-transition-name: all;
+	-o-transition-name: all;
+}

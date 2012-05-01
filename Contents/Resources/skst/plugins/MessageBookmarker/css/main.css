@@ -1,0 +1,37 @@
+
+/**
+ * Put the CSS related to the plugin here
+ * The gfx folder of your plugin should contain the graphics if you need some
+ * and the hierarchy is kept so you can use url(../gfx/some-graphic.png)
+ */
+
+
+.item.message .body .button.icon.icon-size-small.bookmark-btn
+{
+	display: none;
+	background-image: url(../gfx/bookmark.png);
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	margin-left: -20px;
+	opacity: 0.7;
+}
+
+
+.item.message.bookmarked .body .button.icon.icon-size-small.bookmark-btn
+{
+	opacity: 0.5;
+}
+
+.item.message:hover .body .button.icon.icon-size-small.bookmark-btn,
+.item.message .body .button.icon.icon-size-small.bookmark-btn:hover,
+.item.message.bookmarked .body .button.icon.icon-size-small.bookmark-btn
+{
+	display: inline-block;
+}
+.item.message.bookmarked:hover .body .button.icon.icon-size-small.bookmark-btn,
+.item.message.bookmarked .body .button.icon.icon-size-small.bookmark-btn:hover
+{
+	background-image: url(../gfx/bookmark-remove.png);
+	opacity: 0.7;
+}

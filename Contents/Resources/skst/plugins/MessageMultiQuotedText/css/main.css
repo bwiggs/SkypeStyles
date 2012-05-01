@@ -1,0 +1,35 @@
+
+.quote
+{
+	margin-left: 10px;
+	padding-left: 6px;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #d48044;
+	font-style: italic;
+}
+.quote.level-1
+{
+	border-left-color: #d48044;
+}
+.quote.level-2
+{
+	border-left-color: #78d13f;
+}
+.quote.level-3
+{
+	border-left-color: #8c288c;
+}
+.quote.level-4
+{
+	border-left-color: #61ccf3;
+}
+.quote.level-5
+{
+	border-left-color: #aa7700;
+}
+.quote.level-6
+{
+	border-left-color: #caecc9;
+}
+

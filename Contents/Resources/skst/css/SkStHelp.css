@@ -1,0 +1,151 @@
+/* @override http://www.skypestyles.com/test/skst/css/SkStHelp.css */
+
+/* all help pages related CSS rules */
+
+.modal-box .help
+{
+	padding: 15px;
+}
+
+#helpSelect
+{
+	/*
+	border: 1px solid rgba( 0,0,0,0.3 );
+	color: #fff;
+	text-shadow: 1px 1px 0px rgba( 0,0,0,0.2 );
+	font-weight: bold;
+	background: #b4d66b;
+	font-family: Helvetica Neue, Arial, sans-serif;
+	font-size: 13px;
+	*/
+}
+
+#helpContainer
+{
+	padding-left: 5px;
+	margin-top: 10px;
+}
+
+#helpContainer h2
+{
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+#helpContainer p
+{
+	margin-bottom: 10px;
+}
+
+#helpContainer dl
+{
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eee;
+	font-size: 12px;
+}
+
+#helpContainer dd
+{
+	margin-left: 125px;
+	padding-right: 30px;
+	margin-top: -25px;
+	padding-bottom: 2px;
+}
+
+#helpContainer dt
+{
+	padding-right: 10px;
+	color: #999;
+	font-style: italic;
+	padding-bottom: 4px;
+	text-align: right;
+	width: 103px;
+}
+
+.example
+{
+	background:		#f7f7f7;
+	border:			1px solid rgba( 0,0,0,0.1 );
+	padding:		10px;
+	margin-bottom:	10px;
+}
+
+#helpContainer div.hr-top
+{
+	padding-top: 15px;
+	margin-top: 15px;
+	border-top: 1px solid #eee;
+}
+
+#helpContainer pre,
+#helpContainer code
+{
+	font-family: monospace;
+}
+
+.help-emotes
+{
+}
+
+table.emotes
+{
+	border-spacing: 1px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+
+table.emotes tr td:nth-child(1)
+{
+	width: 100%;
+}
+
+table.emotes tr td:nth-child(3)
+{
+	text-align: right;
+}
+
+
+table.emotes tr td:nth-child(2)
+{
+	display: none;
+}
+
+table.emotes td
+{
+	padding: 8px;
+	vertical-align: middle;
+}
+
+table.emotes thead td
+{
+	font-weight: bold;
+}
+table.emotes tbody tr:nth-child(odd) td
+{
+	background-color: rgba( 0,0,0,0.03 );
+}
+
+table.emotes td.emote, table.emotes tbody tr:nth-child(odd) td.emote
+{
+	text-align: left;
+}
+table.emotes td.emote img
+{
+	border: none;
+	margin: 0;
+}
+
+.global-credits
+{
+	padding: 10px 15px;
+}
+
+p.note
+{
+	margin-top: 5px;
+	font-size: 0.9em;
+	font-style: italic;
+}

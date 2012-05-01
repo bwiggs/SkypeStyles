@@ -1,0 +1,10 @@
+
+.quote-single
+{
+	margin-left: 10px;
+	padding-left: 6px;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #d48044;
+	font-style: italic;
+}

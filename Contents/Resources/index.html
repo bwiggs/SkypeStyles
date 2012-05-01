@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SkypeStyles.com&copy; Chat Style</title>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+	<script>
+		var debug = false;
+		var _loggedMessages = [];
+		console._log = console.log;
+		console.log = function(message)
+		{
+			_loggedMessages.push(message);
+			console._log.apply(console, arguments);
+		};
+	</script>
+	<script src="skst/js/prototype/prototype.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="skst/js/SkStLoader.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		var _fakeId = 0;
+		document.observe('skst:ready', function()
+		{
+			var e = $('debug-panel');
+			SCS.conv.appendItem("<div class=\"item history\" id=\"4294967294\">\n\t<div class=\"container\">\n\t\t<div class=\"body\">View Earlier Messages\n\t\t<span class=\"history-more\"><a href=\"1\" class=\"history-more\">1&nbsp;Day</a><span class=\"vertical-separator\"></span><a href=\"7\" class=\"history-more\">1&nbsp;Week</a><span class=\"vertical-separator\"></span><a href=\"14\" class=\"history-more\">2&nbsp;Weeks</a><span class=\"vertical-separator\"></span><a href=\"31\" class=\"history-more\">1&nbsp;Month</a><span class=\"vertical-separator\"></span><a href=\"92\" class=\"history-more\">3&nbsp;Months</a><span class=\"vertical-separator\"></span><a href=\"183\" class=\"history-more\">6&nbsp;Months</a><span class=\"vertical-separator\"></span></span></div>\n\t</div>\n</div>",false);
+SCS.conv.appendItem("<div class=\"item message followup in read\" id=\"11525257\">\n\t<div class=\"container\">\n\t\t<div class=\"head\">\n\t\t\t<span class=\"sender\" sender=\"ottomatona\" nick=\"Andrew (CS Tech Team)\"><span class=\"profile\" data-sender=\"ottomatona\"></span><img src=\"skcg:avatar?identity=ottomatona\" class=\"avatar\" alt=\"\" data-sender=\"ottomatona\" /><a href=\"skypechatcontact:ottomatona\">Andrew (CS Tech Team)</a></span>\n\t\t\t<span class=\"time\">13/10/11 21:34</span>\n\t\t\t<button class=\"actions\" title=\"Actions\"></button>\n\t\t</div>\n\t\t<div class=\"body\">mysql&gt; select * from ethnicity;<br/>+-----------------+--------------+<br/>| ethnicity &nbsp; &nbsp; &nbsp; | ethnicity_id |<br/>+-----------------+--------------+<br/>| Caucasian &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 | <br/>| Chinese &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 | <br/>| Japanese &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 | <br/>| Korean &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 | <br/>| Phillippino &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 | <br/>| Russian &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 | <br/>| American Indian | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 | <br/>| Caucasian &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 | <br/>| Chinese &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 | <br/>| Japanese &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 | <br/>| Korean &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 | <br/>| Phillippino &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 | <br/>| Russian &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 | <br/>| American Indian | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 | <br/>+-----------------+--------------+<br/>14 rows in set (0.00 sec)</div>\n\t</div>\n</div>",false);
+SCS.conv.scrollToEnd();
+e.show();
+			if ( e.visible() )
+			{
+				e = $('debug-input');
+				$('container').setStyle({marginBottom: $('debug-panel').getHeight() + 'px'});
+				e.observe('keydown', function(event)
+				{
+					if ( event.keyCode == Event.KEY_RETURN )
+					{
+						event.stop();
+						var d = new Date(), time = d.toLocaleTimeString(), id = 'fake-' + (++_fakeId), text = e.getValue();
+						text = text.escapeHTML().replace(/(mailto\:|(news|(ht|f)tp(s?))\:\/\/)(([^\s]+)|([^\s]+)(#[^#]+)?)/g, function(all)
+						{
+							var v = all.escapeHTML().replace(/"/g, '&quot;');
+							return '<a href="' + v + '" title="' + v + '">' + all.escapeHTML() + '</a>';
+						});
+						SCS.conv.appendItem("<div class=\"item message in editable \" id=\"" + id + "\">\n\t<div class=\"container\">\n\t\t<div class=\"head\">\n\t\t\t<span class=\"sender\" sender=\"fakeUser\" nick=\"Fake User\"><img src=\"skcg:avatar?identity=fakeUser\" class=\"avatar\" />Fake User</span>\n\t\t\t<span class=\"time\">" + time + "</span>\n\t\t\t<button class=\"actions\" title=\"Actions\"></button>\n\t\t</div>\n\t\t<div class=\"body\">" + text + "</div>\n\t</div>\n</div>",true);
+						e.setValue('');
+					}
+				});
+			}
+			return;
+		});
+	</script>
+</head>
+<body class="parser-busy">
+	<span class="busy-flag"></span>
+	<div id="container">
+		<div id="conversation">
+			<div class="item typing invisible" id="typing">
+				<div class="container">
+					<div class="head">
+						<span class="sender"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="debug-panel" style="display: none;">
+		<input type="text" id="debug-input"/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,726 @@
+
+
+/**
+ * main toolbar
+ */
+body > div.toolbar
+{
+	
+	background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.06, rgb(163,205,73)),
+    color-stop(0.53, rgb(181,215,109)));
+	z-index: 120;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	padding: 0 !important;
+	margin: 0 !important;
+	min-height: 30px;
+	text-align: right;
+	-webkit-box-shadow: 0px 1px 0px rgba( 255,255,255,0.3 ), inset 0px -1px 0px rgba( 0,0,0,0.2 ), inset -1px 0px 0px rgba( 0,0,0,0.1 );
+}
+
+body > div.toolbar:after
+{
+	content: '';
+	position: absolute;
+	background: url('../gfx/resources.png') no-repeat -23px -102px;
+	width: 164px;
+	height: 16px;
+	top: 8px;
+	left: 10px;
+	z-index: 200;
+}
+
+/**
+ * Any direct item in the toolbars
+ */
+div.toolbar > a,div.toolbar > a:hover,div.toolbar > a:active,div.toolbar > a:visited
+{
+	text-decoration: none !important;
+}
+div.toolbar > .spacer
+{
+	width: 20px;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+/**
+ * The drowpdown item in a toolbar (the button)
+ */
+div.toolbar > a.dropdown
+{
+	color: #444;
+	text-shadow: 1px 1px 0px rgba( 255,255,255,0.3 );
+	background: rgba( 0,0,0,0.07 );
+	line-height: 2.5;
+	padding-left: 25px;
+	padding-right: 15px;
+	margin: 0;
+	-webkit-box-shadow: -1px 0px 0px rgba( 255,255,255,0.2), inset 1px 0px 0px rgba( 0,0,0,0.2 );
+	text-align: left;
+	
+	-webkit-transition: background 0.4s ease;
+}
+
+div.toolbar > a.dropdown:before
+{
+	content: '';
+	position: absolute;
+	background: url( ../gfx/resources.png );
+	background-position: -130px -22px;
+	width: 10px;
+	height: 10px;
+	opacity: 0.6;
+	margin-left: -13px;
+	margin-top: 11px;
+}
+
+div.toolbar > a.dropdown:first-child
+{
+	-webkit-box-shadow: -1px 0px 0px rgba( 255,255,255,0.1), inset 1px 0px 0px rgba( 0,0,0,0.1 );
+	margin-right: 0px;
+}
+
+div.toolbar > a.dropdown:hover
+{
+	background: #fff;
+	-webkit-box-shadow: -1px 0px 0px rgba( 255,255,255,0), inset 1px 0px 0px rgba( 0,0,0,0.4 );
+}
+
+/* My Comment */
+/**
+ * The div containing the UL of a dropdown
+ * Used to be able to positionate correctly the list in JS without the border/margin/padding problems
+ */
+div.toolbar > a.dropdown > div.list
+{
+	position: absolute;
+	margin: 0;
+	border: none;
+	/* changeable */
+	line-height: 1.5;
+	margin-top: 2px;
+	padding-right: 1px;
+}
+/**
+ * The list itself
+ */
+div.toolbar > a.dropdown > div.list > ul
+{
+	background: #fff;
+	overflow-y: auto;
+	max-width: 300px;
+	min-width: 200px;
+	padding: 0px;
+	margin-right: 3px;
+	margin-top: -2px;
+	border-left: 1px solid rgba( 0,0,0,0.2 );
+	border-right: 1px solid rgba( 0,0,0,0.2 );
+	border-bottom: 1px solid rgba( 0,0,0,0.2 );
+	
+	text-shadow: 1px 1px 0px rgba( 255,255,255,0 );
+	
+	padding-top: 5px;
+}
+
+div.toolbar > a.dropdown > div.list > ul:after
+{
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 0px;
+	/*background: url( ../gfx/drop_down_corner.png );*/
+	right: 20px;
+	top: 3px;
+}
+
+/**
+ * A list item
+ */
+div.toolbar > a.dropdown > div.list > ul > li:first-child
+{
+	padding-top: 7px;
+}
+ 
+div.toolbar > a.dropdown > div.list > ul > li
+{
+	padding: 7px 8px 3px 15px;
+	background: #fff;
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+div.toolbar > a.dropdown > div.list > ul > li:hover
+{
+	background: #f8f8f8;
+}
+
+/**
+ * A list item icon
+ */
+div.toolbar > a.dropdown > div.list > ul > li > .icon
+{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+	margin-left: 2px;
+	opacity: 0.4;
+	display: none;
+}
+/**
+ * A list item label
+ */
+div.toolbar > a.dropdown > div.list > ul > li > .label
+{
+	display: block;
+	color: #999;
+	padding-right: 4px;
+	margin-bottom: 4px;
+	overflow: hidden;
+	word-wrap: no-wrap;
+	text-align: right;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.toolbar > a.dropdown > div.list > ul > li > .label a
+{
+	text-decoration: none;
+	color: #999;
+}
+
+div.toolbar > a.dropdown > div.list > ul > li > .label a:hover, div.toolbar > a.dropdown > div.list > ul > li > .label:hover
+{
+	color: #999;
+}
+
+
+
+
+
+/**
+ * SkStModalBox
+ */
+.modal-box.overlay, .modal-box.container
+{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+
+.modal-box.overlay.hidden,.modal-box.container.hidden
+{
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease;
+}
+
+.modal-box.overlay.visible,
+.modal-box.container.visible
+{
+	opacity: 1;
+	-webkit-transition: opacity 1s ease;
+}
+.modal-box.overlay.visible
+{
+	opacity: 0.8;
+	-webkit-transition: opacity 1s ease;
+}
+
+/* the overlay positionned on all document */
+.modal-box.overlay
+{
+	background: rgb( 0,0,0 );
+}
+/* the div containing all the modal box */
+.modal-box.container
+{
+	-webkit-box-shadow: 0px 0px 10px rgba( 0,0,0,0.5 );
+	background: url( ../gfx/bg_texture.png );
+	border-radius: 3px;
+}
+/* the element containing the body of the modalbox */
+.modal-box > .content
+{
+	overflow: auto;
+	border: 1px solid rgba( 0,0,0,0.2 );
+	background: #fff;
+	border-radius: 5px;
+	margin: 10px;
+}
+/* when the content is an iframe */
+.modal-box > .content .iframe
+{
+	/* IMPORTANT!! keep all sizes and borders like this, and skin the .content instead */
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+/* header bar with close button */
+.modal-box > .header
+{
+	background: rgba( 0,0,0,0.1 );
+	-webkit-box-shadow: 0px 1px 0px rgba( 255,255,255,0.2 ), inset 0px -1px 0px rgba( 0,0,0,0.1 );
+	text-align: right;
+	padding-left: 10px;
+	border-radius: 3px 0px 0px;
+	min-height: 31px;
+}
+
+.modal-box > .header:after
+{
+	content: '';
+	position: absolute;
+	background: url('../gfx/resources.png') no-repeat -23px -102px;
+	width: 164px;
+	height: 16px;
+	top: 9px;
+}
+
+/* the part containing the text of the title */
+.modal-box > .header .caption
+{
+	font-size: 13px;
+	font-weight: bold;
+	display: none;
+}
+/* the close button of the header */
+.modal-box > .header .close
+{
+	height: 17px;
+	width: 17px;
+	background: rgba( 0,0,0,0.4 );
+	-webkit-border-radius: 16px;
+	background-position: -66px -45px;
+	float: right;
+	margin-top: 7px;
+	margin-right: 8px;
+	
+	-webkit-animation: background 0.3s ease;
+}
+
+.modal-box > .header .close:after
+{
+	content: '';
+	position: absolute;
+	background: url(../gfx/resources.png);
+	background-position: -66px -45px;
+	height: 9px;
+	width: 9px;
+	margin-left: 4px;
+	margin-top: 4px;
+	
+}
+.modal-box > .header .close:hover
+{
+	background: rgba( 0,0,0,0.8 );
+}
+
+/* the toolbar */
+.modal-box > .header .toolbar
+{
+	background: transparent;
+}
+
+
+
+
+/**
+ * credits
+ */
+.skst-credits
+{
+	margin-left:  auto;
+	margin-right: auto;
+	padding: 15px;
+}
+.skst-credits h2
+{
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: -2px;
+}
+
+.skst-credits ul.staff
+{
+	margin-top: 10px;
+}
+
+.skst-credits ul.staff li
+{
+	font-size: 12px;
+	background: rgba( 0,0,0,0.05 );
+	border-radius: 3px;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom:10px;
+	text-shadow: 1px 1px 0px rgba( 255,255,255,0.5 );
+	border: 1px solid rgba( 0,0,0,0.1 );
+	min-height: 95px;
+}
+
+.skst-credits ul.staff li a
+{
+	text-shadow: none;
+}
+
+.skst-credits ul.staff li img
+{
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border: 5px solid #fff;
+	-webkit-box-shadow: 0px 0px 3px rgba( 0,0,0,0.4 )
+}
+
+.skst-credits h3
+{
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	display: none;
+}
+.skst-credits h4
+{
+	font-weight: bold;
+	font-size: 12px;
+	margin-top: 8px;
+}
+.skst-credits .header .version
+{
+	font-size: 11px;
+	line-height: 18px;
+}
+.skst-credits .header .version a
+{
+	text-decoration: none !important;
+}
+.skst-credits .header .url
+{
+	display: block;
+	font-size: 11px;
+	line-height: 13px;
+	position: absolute;
+	right: 25px;
+	top: 60px;
+}
+
+.skst-credits ul.staff dt
+{
+	display: none;
+}
+
+.skst-credits ul.staff .name
+{
+	display: none;
+}
+
+.skst-credits ul.staff dl
+{
+	margin-left: 0px;
+}
+.skst-credits ul.staff dt
+{
+	float: left;
+}
+.skst-credits ul.staff dd
+{
+	margin-left: 0px;
+}
+.skst-credits .paypal-donate
+{
+	display: block;
+	margin-top: 8px;
+}
+
+.skst-credits .paypal-donate p
+{
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	text-align: justify;
+	font-size: 0.8em;
+	line-height: 1.5;
+	margin-right: -5px;
+}
+
+.skst-credits .paypal-donate a
+{
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+.skst-credits .paypal-donate a img
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	margin-left: 15px;
+	margin-right: -4px;
+	margin-top: 6px;
+}
+
+.transfer-preview
+{
+	text-align: center;
+	border: 2px inset;
+}
+
+.skst-tooltip
+{
+	position: absolute;
+	max-width: 350px;
+	padding: 2px 8px;
+	font-size: 0.9em;
+	word-wrap: break-word;
+	vertical-align: middle;
+	opacity: 0.9;
+	color: rgb(68, 68, 68);
+	text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.3 );
+	-webkit-box-shadow: 0px 1px 3px rgba( 0,0,0,0.5 );
+	background: #fff;
+}
+
+.skst-tooltip span
+{
+	display: inline-block;
+	word-wrap: break-word;
+	vertical-align: middle;
+}
+.skst-tooltip img
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.skst-context-menu
+{
+	padding: 2px;
+	position: absolute;
+	color: rgb(68, 68, 68);
+	text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.3 );
+	border: 1px solid #666;
+	-webkit-box-shadow: 0px 0px 3px rgba( 0,0,0,0.4 );
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.06, rgb(163, 205, 73)), color-stop(0.53, rgb(181, 215, 109)));
+}
+.skst-context-menu li
+{
+	cursor: pointer;
+	padding: 2px;
+}
+.skst-context-menu li:hover
+{
+	background-color: #aaaaff;
+}
+
+
+.current .user-menu-item
+{
+	color: rgba(0, 130, 0, 0.6);
+}
+
+.user-menu-item .icon
+{
+	color: transparent;
+	width: 16px;
+	height: 16px;
+	background-image: url( ../gfx/resources.png);
+	opacity: 0.5;
+	
+	-webkit-transition: opacity 0.2s ease;
+}
+
+.user-menu-item .icon:hover
+{
+	opacity: 0.8;
+}
+
+.user-menu-item .icon.profile
+{
+	background-position: -329px -168px;
+}
+.user-menu-item .icon.show-all
+{
+	background-position: -328px -145px;
+}
+.user-menu-item .icon.scroll-to
+{
+	background-position: -349px -145px;
+	width: 18px;
+}
+
+.user-menu-item .icon.toggle
+{
+	background-position: -306px -145px;
+}
+.user-menu-item .icon.toggle[messages-shown="0"]
+{
+	background-position: -306px -169px;
+}
+.user-menu-item .icon.toggle[messages-shown="0"]:hover
+{
+	background-position: -306px -145px;
+}
+.user-menu-item .icon.toggle:hover
+{
+	background-position: -306px -169px;
+}
+
+
+
+/** object renderer relatives (debug only) **/
+.jso-container
+{
+	font: 8pt "Courier New", Courier, mono !important;
+	text-align: left !important;
+}
+
+.jso-filter {
+	line-height: inherit !important;
+	font-size: inherit !important;
+	font-family: inherit !important;
+	font: inherit !important;
+	color: #ff1d49 !important;
+	text-transform: lowercase !important;
+	background-color: transparent !important;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.jso-plus-minus {
+	display: inline-block;
+	width: 7px !important;
+	height: 7px !important;
+	font-size: 7pt !important;
+	line-height: 7px !important;
+	border: 1px solid gray !important;
+	float: left !important;
+	cursor:  pointer !important;
+	margin-left: 4px !important;
+	margin-top: 2px !important;
+	text-align: center !important;
+	background-color: #f9fcfe !important;
+}
+
+.jso-label {
+	display: block !important;
+	padding-left: 18px !important;
+}
+
+.jso-header
+{
+	margin-top: 1px;
+}
+
+.jso-name {
+	font-weight: bold !important;
+}
+
+.jso-type {
+	font-style: italic !important;
+	color: #ff1d49 !important;
+}
+
+.jso-size {
+	color: #00bb52 !important;
+}
+
+.jso-value {
+	color: #307fcb !important;
+}
+
+.jso-content {
+	margin-left: 18px !important;
+	border-left: 1px dashed #bbb !important;
+}
+
+.jso-pre
+{
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+.jso-loading
+{
+	background-color: #00bb52 !important;
+	color: #ffffff !important;
+	display: inline-block !important;
+	padding: 1px !important;
+}
+/** end of debuging css **/
+
+
+.user-all-items
+{
+}
+
+.user-all-items .group
+{
+	margin: 8px;
+	border: 1px solid #e0e0e0;
+	padding: 4px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.user-all-items .group .message
+{
+	padding: 1px;
+	line-height: normal;
+}
+
+
+#debug-panel
+{
+	position: fixed;
+	bottom: 0px;
+	padding: 2px;
+	border-top: 1px solid black;
+	text-align: left;
+	background-color: #fff;
+	width: 100%;
+}
+#debug-input
+{
+	width: 90%
+}
+
+.busy-flag
+{
+	width: 32px;
+	height: 32px;
+	background-image: url(../gfx/busy.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: fixed;
+	left: 180px;
+	display: none;
+	z-index: 10000;
+}
+.parser-busy .busy-flag
+{
+	display: inline;
+}
+
+
+pre.console
+{
+	white-space: pre;
+	font-family: monospace;
+	color: #fff;
+	background-color: #000;
+	padding: 4px;
+}
